@@ -1,5 +1,7 @@
 .container {
+  height: 100vh;
   background-color: #70ce7c;
+  color: white;
   text-align: center;
   margin: 0 auto;
   padding: 5px;

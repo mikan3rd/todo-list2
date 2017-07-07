@@ -1,13 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="container">
-        Hello
-      </div>
-    );
-  }
-}
+const App = () => (
+  <div className="container">
+    <h1>ReduxでTodoアプリ</h1>
+  </div>
+)
 
 export default App;
