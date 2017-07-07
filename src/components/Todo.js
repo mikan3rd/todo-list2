@@ -1,12 +1,13 @@
 import React, { PropTypes } from 'react'
 
-const Todo = ({text}) => (
+const Todo = ({id, text}) => (
   <li>
-    {text}
+    {id + 1}：{text}
   </li>
 )
 
 Todo.propTypes = {
+  id: PropTypes.number.isRequired,
   text: PropTypes.string.isRequired
 }
 
