@@ -4,7 +4,7 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 const App = () => (
   <div className="container">
     <h1>ReduxでTodoアプリ</h1>
-    <VisibleTodoList />
+    <h2><VisibleTodoList /></h2>
   </div>
 )
 

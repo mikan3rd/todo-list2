@@ -11,8 +11,8 @@ import { addTodo } from './actions'
 
 let store = createStore(todo);
 
-store.dispatch(addTodo('Hello!'))
-store.dispatch(addTodo('オッス'))
+store.dispatch(addTodo('Hello, React!!'))
+store.dispatch(addTodo('Hello, Redux!!'))
 console.log(store.getState())
 
 render(
