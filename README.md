@@ -9,3 +9,4 @@
 * `$ npm install --save react-redux`
 
 # メモ
+* 作成日時を出力する

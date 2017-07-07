@@ -10,7 +10,7 @@ let AddTodo = ({dispatch}) => {
         ref={ node => {
           input = node
         }}
-      />
+      /><br/>
       <button onClick={() => {
         dispatch(addTodo(input.value))
         input.value = ''

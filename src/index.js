@@ -13,7 +13,6 @@ let store = createStore(todo);
 
 store.dispatch(addTodo('Hello, React!!'))
 store.dispatch(addTodo('Hello, Redux!!'))
-console.log(store.getState())
 
 render(
   <Provider store={store}>
