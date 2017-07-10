@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 
 class Todo extends Component {
+
+  static propTypes = {
+    id: PropTypes.number.isRequired,
+    text: PropTypes.string.isRequired,
+  }
+
   render() {
     const link = this.props.completed? '元に戻す' : '完了！';
     const className = this.props.completed? 'done' : 'undone';
@@ -15,6 +23,7 @@ class Todo extends Component {
       </li>
     );
   }
+
 }
 
 export default Todo
