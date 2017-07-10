@@ -18,8 +18,8 @@ class Todo extends React.Component {
       <li className={className}>
         <span>{this.props.id + 1}</span>
         <span>：{this.props.text}　　</span>
-        <a href="#" onClick={() => this.props.toggleTodo()}>{link}</a>　　
-        <a href="#" onClick={() => this.props.deleteTodo()}>{todoDelete}</a><br/>
+        <a href="#" onClick={() => this.props.toggleTodo()} className='button'>{link}</a>　　
+        <a href="#" onClick={() => this.props.deleteTodo()} className='button'>{todoDelete}</a><br/>
       </li>
     );
   }

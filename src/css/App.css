@@ -17,4 +17,11 @@
 
 .done {
   font-size: 15px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.button {
+  float: right;
+  margin-right: 10px;
 }
