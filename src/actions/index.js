@@ -15,7 +15,7 @@ export const toggleTodo = id => {
   }
 }
 
-export const filtertodo = filter => {
+export const filterTodo = filter => {
   return {
     type: 'FILTER_TODO',
     filter
