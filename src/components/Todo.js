@@ -15,7 +15,7 @@ class Todo extends React.Component {
     const todoDelete = this.props.completed? '削除' : '';
     return(
       <li className={className}>
-        <span className="content">{this.props.id + 1}：{this.props.text}</span>
+        <p className="content">{this.props.id + 1}：{this.props.text}</p>
         <a href="" onClick={(e) => {e.preventDefault(); this.props.toggleTodo()}} className='button'>{link}</a>　　
         <a href="" onClick={(e) => {e.preventDefault(); this.props.deleteTodo()}} className='button'>{todoDelete}</a><br/>
       </li>
