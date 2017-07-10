@@ -17,4 +17,29 @@
 
 .done {
   font-size: 15px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.done:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
+.button {
+  float: right;
+  margin-right: 10px;
+}
+
+.link-list {
+  width: 300px;
+  color: white;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.content {
+  margin-left: 10px;
+  float: left;
 }
