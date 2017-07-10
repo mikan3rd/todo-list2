@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from './Link'
 import FilterLink from '../containers/FilterLink'
 
 
@@ -9,9 +8,9 @@ class LinkList extends React.Component {
     return(
       <p className='link-list'>
         Filter：　
-        <FilterLink>All</FilterLink>　/　
-        <FilterLink>Active</FilterLink>　/　
-        <FilterLink>Completed</FilterLink>
+        <FilterLink filter="SHOW_ALL">All</FilterLink>　/　
+        <FilterLink filter="SHOW_ACTIVE">Active</FilterLink>　/　
+        <FilterLink filter="SHOW_COMPLETED">Completed</FilterLink>
       </p>
     );
   }

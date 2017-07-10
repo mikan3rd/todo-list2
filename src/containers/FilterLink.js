@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    onClick: () => {dispatch(filterTodo(ownProps.filter))}
+    filterTodo: () => {dispatch(filterTodo(ownProps.filter))}
   }
 }
 

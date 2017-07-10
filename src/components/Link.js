@@ -10,7 +10,14 @@ class Link extends React.Component {
 
   render() {
     return(
-      <a href='#'>{this.props.children}</a>
+      <a href=""
+        onClick={(e) => {
+          e.preventDefault();
+          this.props.filterTodo();
+        }}
+      >
+        {this.props.children}
+      </a>
     );
   }
 
