@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class from extends Component {
+class Todo extends Component {
   render() {
     const link = this.props.completed? '元に戻す' : '完了！';
     const className = this.props.completed? 'done' : 'undone';
@@ -11,9 +11,10 @@ export default class from extends Component {
         <span>{this.props.id + 1}</span>
         <span>：{this.props.text}　　</span>
         <a href="#" onClick={() => this.props.toggleTodo()}>{link}</a>　　
-        <a href="#" onClick={() => this.props.deleteTodoState(this.props)}>{todoDelete}</a><br/>
+        <a href="#" onClick={() => this.props.deleteTodo()}>{todoDelete}</a><br/>
       </li>
     );
   }
-
 }
+
+export default Todo
