@@ -16,10 +16,12 @@ input {
 
 button {
   margin-top: 10px;
-  width: 100px;
+  width: 207px;
   height: 30px;
   transition: all 1s ease;
   outline: 0;
+  font-size: 20px;
+  line-height: 28px;
 }
 
 button:hover {

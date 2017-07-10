@@ -32,3 +32,8 @@
   margin: 10px auto;
   padding: 5px;
 }
+
+.content {
+  text-align: center;
+  margin-left: 10px;
+}

@@ -12,7 +12,6 @@ const getFilter = (todos, filter) => {
       return todos.filter( todo => !todo.completed )
     default:
       return
-
   }
 }
 

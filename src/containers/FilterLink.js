@@ -4,7 +4,10 @@ import Link from '../components/Link'
 
 
 const mapStateToProps = (state, ownProps) => {
-  return {state: state}
+  console.log(ownProps)
+  return {
+    active: ownProps.filter === state.filter
+  }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
