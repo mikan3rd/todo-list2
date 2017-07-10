@@ -14,3 +14,10 @@ export const toggleTodo = id => {
     id
   }
 }
+
+export const filtertodo = filter => {
+  return {
+    type: 'FILTER_TODO',
+    filter
+  }
+}
