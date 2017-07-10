@@ -1,6 +1,6 @@
 # 疑問
 - [ ] Reduxのディレクトリ構成は手動？
-- [ ] importの{}があるものとないものの意味の違い
+- [x] importの{}があるものとないものの意味の違い
 - [ ] registerServiceWorkerとは？
 - [x] combineReducersは他のReducerを集約してるだけ？
 

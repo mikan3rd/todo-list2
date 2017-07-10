@@ -1,22 +1,34 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import Todo from './Todo'
 
-const TodoList = ({todos}) => (
-  <ul>
-    {todos.map( todo =>
+
+class TodoList extends React.Component {
+
+  static propTypes = {
+    todos: PropTypes.arrayOf(PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      text: PropTypes.string.isRequired
+    }).isRequired).isRequired,
+    toggleTodo: PropTypes.func,
+  }
+
+  render() {
+    const todos = this.props.todos.map( todo =>
       <Todo
         key={todo.id}
         {...todo}
+        toggleTodo={() => this.props.toggleTodo(todo.id)}
       />
-    )}
-  </ul>
-)
+    )
 
-TodoList.propTypes = {
-  todos: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    text: PropTypes.string.isRequired
-  }).isRequired).isRequired
+    return(
+      <ul>
+        {todos}
+      </ul>
+    );
+  }
+
 }
 
 export default TodoList

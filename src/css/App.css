@@ -6,3 +6,15 @@
   margin: 0 auto;
   padding: 5px;
 }
+
+.undone {
+  width: 400px;
+  background-color: white;
+  color: green;
+  margin: 10px auto;
+  padding: 5px;
+}
+
+.done {
+  font-size: 15px;
+}
