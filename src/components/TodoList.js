@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Todo from './Todo'
 
 
-class TodoList extends Component {
+class TodoList extends React.Component {
 
   static propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({

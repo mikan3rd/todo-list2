@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 
-class Todo extends Component {
+class Todo extends React.Component {
 
   static propTypes = {
     id: PropTypes.number.isRequired,
