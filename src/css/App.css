@@ -25,3 +25,10 @@
   float: right;
   margin-right: 10px;
 }
+
+.link-list {
+  width: 300px;
+  color: white;
+  margin: 10px auto;
+  padding: 5px;
+}

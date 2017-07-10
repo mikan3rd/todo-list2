@@ -6,7 +6,7 @@ class LinkList extends React.Component {
 
   render() {
     return(
-      <p>
+      <p className='link-list'>
         Filter：　
         <Link>All</Link>　/　
         <Link>Active</Link>　/　
@@ -14,6 +14,7 @@ class LinkList extends React.Component {
       </p>
     );
   }
+
 }
 
 export default LinkList
