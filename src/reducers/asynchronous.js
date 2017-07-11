@@ -16,10 +16,21 @@ export const loadTodos = (state = false, action) => {
   }
 }
 
-export const todos = (state = [], action) => {
+export const getTodos = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_TODOS_SUCCESS':
-      return action.todos;
+      const todos = state.slice()
+      action.todos.map(todo =>
+        todos.push({
+          id: todo.id,
+          text: todo.text,
+          completed: todo.completed
+        })
+      )
+      console.log(todos)
+      return [
+
+      ]
     default:
       return state;
   }

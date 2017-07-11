@@ -1,13 +1,4 @@
-// import Axios from 'axios';
-
 let nextTodoId = 0;
-
-// export const initTodo = () => {
-//   return dispatch => {
-//     const data = fetch('http://127.0.0.1:3000/data.json');
-//     console.log(data)
-//   }
-// }
 
 export const fetchError = status => {
   return {
@@ -72,7 +63,7 @@ export const fetchTodos = url => {
         return response;
       })
       .then((response) => response.json())
-      .then((comments) => dispatch(fetchTodosSuccess(comments)))
+      .then((todos) => dispatch(fetchTodosSuccess(todos)))
       .catch(() => dispatch(fetchError(true)));
   }
 }
