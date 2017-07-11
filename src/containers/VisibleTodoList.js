@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import TodoList from '../components/TodoList'
-import { initTodo, toggleTodo, deleteTodo } from '../actions'
+import { toggleTodo, deleteTodo } from '../actions'
+// import { initTodo } from '../actions'
 
 const getFilter = (todos, filter) => {
   switch (filter) {
