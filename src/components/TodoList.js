@@ -5,6 +5,10 @@ import Todo from './Todo'
 
 class TodoList extends React.Component {
 
+  // componentDidMount() {
+  //   this.props.initTodo();
+  // }
+
   static propTypes = {
     todos: PropTypes.arrayOf(PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -19,6 +23,7 @@ class TodoList extends React.Component {
         key={todo.id}
         {...todo}
         toggleTodo={() => this.props.toggleTodo(todo.id)}
+        deleteTodo={() => this.props.deleteTodo(todo.id)}
       />
     )
 
