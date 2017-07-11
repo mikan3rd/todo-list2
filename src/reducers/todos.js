@@ -3,6 +3,7 @@ const todos = (state = [], action) => {
   switch (action.type) {
 
     case 'ADD_TODO':
+    // console.log(state, action)
       return [
         ...state,
         {
@@ -18,6 +19,9 @@ const todos = (state = [], action) => {
 
     case 'DELETE_TODO':
       return state.filter(todo => todo.id !== action.id);
+
+    case 'FETCH_TODOS_SUCCESS':
+      return action.todos
 
     default:
       return state

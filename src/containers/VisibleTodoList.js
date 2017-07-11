@@ -17,6 +17,7 @@ const getFilter = (todos, filter) => {
 }
 
 const mapStateToProps = state => {
+  // console.log(state)
   return {
     todos: getFilter(state.todos, state.filter),
     hasError: state.fetchError,
