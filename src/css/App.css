@@ -16,6 +16,12 @@
   border-radius: 30px;
 }
 
+.undone:after {
+  clear: both;
+  display: block;
+  content: "";
+}
+
 .done {
   font-size: 15px;
   width: 400px;
@@ -30,7 +36,7 @@
 
 .button {
   float: right;
-  margin-right: 10px;
+  position: relative;
 }
 
 .link-list {
@@ -43,4 +49,13 @@
 .content {
   margin-left: 10px;
   float: left;
+}
+
+.date {
+  color: green;
+  font-size: 10px;
+  float: left;
+  position: absolute;
+  bottom: 3px;
+  left: -60px;
 }

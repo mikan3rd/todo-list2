@@ -67,28 +67,3 @@ export const fetchTodos = url => {
       .catch(() => dispatch(fetchError(true)));
   }
 }
-
-// export function saveTodoList(data) {
-//   return dispatch => {
-//     dispatch(saveTodoListRequest());
-//
-//     Axios.post('/todo_list', data).then(
-//       response => dispatch(saveTodoListResult(response.data.result))
-//     ).catch(
-//       () => dispatch(saveTodoListResult(false))
-//     );
-//   };
-// }
-//
-// function saveTodoListRequest() {
-//   return {
-//     type: 'SAVE_LIST_AJAX_REQUEST',
-//   };
-// }
-//
-// function saveTodoListResult(result) {
-//   return {
-//     type: 'SAVE_LIST_AJAX_RESULT',
-//     result,
-//   };
-// }

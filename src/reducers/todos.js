@@ -3,13 +3,14 @@ const todos = (state = [], action) => {
   switch (action.type) {
 
     case 'ADD_TODO':
-    // console.log(state, action)
+    console.log(state)
       return [
         ...state,
         {
-          id: action.id,
+          id: state.length,
           text: action.text,
-          completed: false
+          completed: false,
+          date: new Date()
         }
       ]
 
