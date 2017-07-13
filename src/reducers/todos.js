@@ -3,7 +3,10 @@ const todos = (state = [], action) => {
   switch (action.type) {
 
     case 'ADD_TODO':
-    console.log(state)
+      if (!action.text) {
+        alert("入力がありません")
+        return state
+      }
       return [
         ...state,
         {
@@ -22,7 +25,6 @@ const todos = (state = [], action) => {
       return state.filter(todo => todo.id !== action.id);
 
     case 'FETCH_TODOS_SUCCESS':
-    console.log(action.todos.map(todo => todo.text))
       return action.todos
 
     default:
