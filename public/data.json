@@ -1,12 +1,8 @@
 [
   {
-    "id": 0,
-    "text": "Hello, React!!",
-    "completed": false
+    "text": "Hello, React!!"
   },
   {
-    "id": 1,
-    "text": "Hello, Redux!!",
-    "completed": false
+    "text": "Hello, Redux!!"
   }
 ]

@@ -17,7 +17,10 @@ export const loadTodos = status => {
 export const fetchTodosSuccess = todos => {
   return {
     type: 'FETCH_TODOS_SUCCESS',
-    todos
+    todos: todos.map(todo => {
+      const todo2 = Object.assign({}, todo, { id: nextTodoId++ });
+      return todo2;
+    })
   }
 }
 

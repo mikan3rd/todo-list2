@@ -7,7 +7,7 @@ const todos = (state = [], action) => {
       return [
         ...state,
         {
-          id: state.length,
+          id: action.id,
           text: action.text,
           completed: false,
           date: new Date()
@@ -22,6 +22,7 @@ const todos = (state = [], action) => {
       return state.filter(todo => todo.id !== action.id);
 
     case 'FETCH_TODOS_SUCCESS':
+    console.log(action.todos.map(todo => todo.text))
       return action.todos
 
     default:
