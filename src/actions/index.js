@@ -18,7 +18,7 @@ export const fetchTodosSuccess = todos => {
   return {
     type: 'FETCH_TODOS_SUCCESS',
     todos: todos.map(todo => {
-      const todo2 = Object.assign({}, todo, { id: nextTodoId++ });
+      const todo2 = Object.assign({}, todo, { id: nextTodoId++, completed: false, date: new Date() });
       return todo2;
     })
   }
