@@ -17,7 +17,6 @@ const getFilter = (todos, filter) => {
 }
 
 const mapStateToProps = state => {
-  // console.log(state)
   return {
     todos: getFilter(state.todos, state.filter),
     hasError: state.fetchError,
@@ -27,7 +26,6 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    // initTodo: () => dispatch(initTodo()),
     toggleTodo: id => dispatch(toggleTodo(id)),
     deleteTodo: id => dispatch(deleteTodo(id)),
     fetchData: url => dispatch(fetchTodos(url))
