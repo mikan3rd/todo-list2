@@ -13,12 +13,25 @@ class TodoList extends React.Component {
     toggleTodo: PropTypes.func,
   }
 
+  componentDidMount() {
+    this.props.fetchData('data.json')
+  }
+
   render() {
+
+    if (this.props.hasError) {
+      return <p>error</p>;
+    }
+    if (this.props.isLoading) {
+      return <p>loading . . . </p>;
+    }
+
     const todos = this.props.todos.map( todo =>
       <Todo
         key={todo.id}
         {...todo}
-        toggleTodo={() => this.props.toggleTodo(todo.id)}
+        toggleTodo={() => this.props.toggleTodo(todo.id, todo.completed)}
+        deleteTodo={() => this.props.deleteTodo(todo.id)}
       />
     )
 
@@ -26,7 +39,7 @@ class TodoList extends React.Component {
       <ul>
         {todos}
       </ul>
-    );
+    )
   }
 
 }

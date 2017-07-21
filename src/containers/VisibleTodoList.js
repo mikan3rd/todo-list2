@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import TodoList from '../components/TodoList'
-import { toggleTodo } from '../actions'
+import { toggleTodo, deleteTodo, fetchTodos } from '../actions'
+// import { initTodo } from '../actions'
 
 const getFilter = (todos, filter) => {
   switch (filter) {
@@ -15,13 +16,19 @@ const getFilter = (todos, filter) => {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { todos: getFilter(state.todos, state.filter) }
+const mapStateToProps = state => {
+  return {
+    todos: getFilter(state.todos, state.filter),
+    hasError: state.fetchError,
+    isLoading: state.loadTodos
+  }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    toggleTodo: id => dispatch(toggleTodo(id))
+    toggleTodo: (id, completed) => dispatch(toggleTodo(id, completed)),
+    deleteTodo: id => dispatch(deleteTodo(id)),
+    fetchData: url => dispatch(fetchTodos(url))
   }
 }
 
