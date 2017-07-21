@@ -26,7 +26,6 @@ class TodoList extends React.Component {
       return <p>loading . . . </p>;
     }
 
-
     const todos = this.props.todos.map( todo =>
       <Todo
         key={todo.id}
@@ -40,7 +39,7 @@ class TodoList extends React.Component {
       <ul>
         {todos}
       </ul>
-    );
+    )
   }
 
 }
