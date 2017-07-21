@@ -26,7 +26,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    toggleTodo: id => dispatch(toggleTodo(id)),
+    toggleTodo: (id, completed) => dispatch(toggleTodo(id, completed)),
     deleteTodo: id => dispatch(deleteTodo(id)),
     fetchData: url => dispatch(fetchTodos(url))
   }

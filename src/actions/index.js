@@ -32,10 +32,11 @@ export const addTodo = text => {
   }
 }
 
-export const toggleTodo = id => {
+export const toggleTodo = (id, completed) => {
   return {
     type: 'TOGGLE_TODO',
-    id
+    id,
+    completed
   }
 }
 

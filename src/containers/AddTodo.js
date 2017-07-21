@@ -16,7 +16,6 @@ class AddTodo extends React.Component {
         /><br/>
         <button onClick={() => {
           this.props.dispatch(addTodo(input.value))
-          input.value = ''
         }}>Todoを作成</button>
       </div>
     );

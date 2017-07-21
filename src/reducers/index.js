@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
 import filter from './visibilityFilter'
+import countCompleted from './countCompleted'
 import { fetchError, loadTodos } from './asynchronous'
 
 const todoApp = combineReducers({
@@ -8,5 +9,6 @@ const todoApp = combineReducers({
   filter,
   fetchError,
   loadTodos,
+  countCompleted,
 })
 export default todoApp

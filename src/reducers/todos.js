@@ -7,7 +7,8 @@ const todos = (state = [], action) => {
         alert("入力がありません")
         return state
       }
-      if (state.filter(todo => todo.text === action.text)) {
+      console.log(state, action.text)
+      if (state.filter(todo => todo.text === action.text).length > 0) {
         alert("同じtodoがあります")
         return state
       }
