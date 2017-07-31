@@ -36,7 +36,7 @@ export const toggleTodo = (id, completed) => {
   return {
     type: 'TOGGLE_TODO',
     id,
-    completed
+    completed,
   }
 }
 

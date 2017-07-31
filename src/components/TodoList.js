@@ -6,16 +6,15 @@ import Todo from './Todo'
 class TodoList extends React.Component {
 
   static propTypes = {
-    todos: PropTypes.arrayOf(PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      text: PropTypes.string.isRequired
-    }).isRequired).isRequired,
+    // todos: PropTypes.arrayOf(PropTypes.shape({
+    //   id: PropTypes.number.isRequired,
+    //   text: PropTypes.string.isRequired
+    // }).isRequired).isRequired,
+    todos: PropTypes.object,
     toggleTodo: PropTypes.func,
   }
 
-  componentDidMount() {
-    this.props.fetchData('data.json')
-  }
+
 
   render() {
 
@@ -29,7 +28,8 @@ class TodoList extends React.Component {
     const todos = this.props.todos.map( todo =>
       <Todo
         key={todo.id}
-        {...todo}
+        id={todo.id}
+        text={todo.text}
         toggleTodo={() => this.props.toggleTodo(todo.id, todo.completed)}
         deleteTodo={() => this.props.deleteTodo(todo.id)}
       />

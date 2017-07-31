@@ -1,5 +1,7 @@
-const todos = (state = [], action) => {
+import Todos from '../models/Todos'
 
+const todos = (state = new Todos(), action) => {
+  console.log(state, action);
   switch (action.type) {
 
     case 'ADD_TODO':
@@ -7,20 +9,12 @@ const todos = (state = [], action) => {
         alert("入力がありません")
         return state
       }
-      console.log(state, action.text)
-      if (state.filter(todo => todo.text === action.text).length > 0) {
+      if (state.todoList.find(todo => todo.text === action.text)) {
         alert("同じtodoがあります")
         return state
       }
-      return [
-        ...state,
-        {
-          id: action.id,
-          text: action.text,
-          completed: false,
-          date: new Date()
-        }
-      ]
+      const newState = state.addTodo(action);
+      return newState
 
     case 'TOGGLE_TODO':
       return state.map( todo =>
