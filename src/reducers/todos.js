@@ -18,7 +18,7 @@ const todos = (state = new Todos(), action) => {
       return state.toggleTodo(action)
 
     case 'DELETE_TODO':
-      return state.todoList.filter(todo => todo.id !== action.id);
+      return state.deleteTodo(action)
 
     case 'FETCH_TODOS_SUCCESS':
       return action.todos

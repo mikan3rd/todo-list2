@@ -29,7 +29,6 @@ class TodoList extends React.Component {
     if (this.props.isLoading) {
       return <p>loading . . . </p>;
     }
-    console.log(this.props.todos)
     const todos = this.props.todos.map( todo =>
       <Todo
         key={todo.id}
