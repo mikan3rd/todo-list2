@@ -12,11 +12,16 @@ class TodoList extends React.Component {
     // }).isRequired).isRequired,
     todos: PropTypes.object,
     toggleTodo: PropTypes.func,
+    deleteTodo: PropTypes.func,
   }
 
 
 
   render() {
+    const {
+      toggleTodo,
+      deleteTodo,
+    } = this.props
 
     if (this.props.hasError) {
       return <p>error</p>;
@@ -24,14 +29,16 @@ class TodoList extends React.Component {
     if (this.props.isLoading) {
       return <p>loading . . . </p>;
     }
-
+    console.log(this.props.todos)
     const todos = this.props.todos.map( todo =>
       <Todo
         key={todo.id}
         id={todo.id}
         text={todo.text}
-        toggleTodo={() => this.props.toggleTodo(todo.id, todo.completed)}
-        deleteTodo={() => this.props.deleteTodo(todo.id)}
+        completed={todo.completed}
+        date={todo.date}
+        toggleTodo={() => toggleTodo(todo.id, todo.completed)}
+        deleteTodo={() => deleteTodo(todo.id)}
       />
     )
 

@@ -1,4 +1,4 @@
-import { Record, List, fromJS } from 'immutable';
+import { Record, List } from 'immutable';
 import Todo from './Todo';
 
 const TodoListRecord = Record({
@@ -12,5 +12,11 @@ export default class Todos extends TodoListRecord {
       text: action.text,
     })))
     return newTodos;
+  }
+  toggleTodo(action) {
+    const todoList = this.todoList.map(todo =>
+      (todo.id === action.id)? todo.update('completed', completed => !todo.completed) : todo
+    );
+    return this.set('todoList', todoList);
   }
 }

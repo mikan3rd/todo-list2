@@ -1,4 +1,4 @@
-import { Record, List, fromJS } from 'immutable';
+import { Record } from 'immutable';
 
 const TodoRecord = Record({
   id: null,

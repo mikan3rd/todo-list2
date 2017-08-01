@@ -1,7 +1,6 @@
 import Todos from '../models/Todos'
 
 const todos = (state = new Todos(), action) => {
-  console.log(state, action);
   switch (action.type) {
 
     case 'ADD_TODO':
@@ -13,15 +12,13 @@ const todos = (state = new Todos(), action) => {
         alert("同じtodoがあります")
         return state
       }
-      const newState = state.addTodo(action);
-      return newState
+      return state.addTodo(action)
 
     case 'TOGGLE_TODO':
-      return state.map( todo =>
-        (todo.id === action.id) ? {...todo, completed: !todo.completed} : todo)
+      return state.toggleTodo(action)
 
     case 'DELETE_TODO':
-      return state.filter(todo => todo.id !== action.id);
+      return state.todoList.filter(todo => todo.id !== action.id);
 
     case 'FETCH_TODOS_SUCCESS':
       return action.todos
