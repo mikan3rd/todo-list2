@@ -15,7 +15,9 @@ class TodoList extends React.Component {
     deleteTodo: PropTypes.func,
   }
 
-
+  componentDidMount() {
+    this.props.fetchData('data.json')
+  }
 
   render() {
     const {

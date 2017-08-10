@@ -1,4 +1,4 @@
-import { Record, List } from 'immutable';
+import { Record, List, Seq } from 'immutable';
 import Todo from './Todo';
 
 const TodoListRecord = Record({
@@ -6,9 +6,19 @@ const TodoListRecord = Record({
 }, 'TodoListRecord');
 
 export default class Todos extends TodoListRecord {
+
+  getNextId(){
+    let newNumber = 1;
+    if(this.todoList.size !== 0){
+      newNumber = Seq(this.todoList).map(x => x.get('id')).max() + 1;
+    }
+    return newNumber;
+  }
+
   addTodo(action) {
+    console.log(this.newNumber);
     return this.set('todoList', this.todoList.push(new Todo({
-      id: action.id,
+      id: this.getNextId(),
       text: action.text,
     })))
   }
@@ -20,6 +30,13 @@ export default class Todos extends TodoListRecord {
   }
   deleteTodo(action) {
     const todoList = this.todoList.filter(todo => todo.id !== action.id);
+    return this.set('todoList', todoList);
+  }
+  fetchTodos(action) {
+    let firstNumber = 0;
+    const todos = action.todos.map(todo => new Todo({ id: firstNumber++, text: todo.text}));
+    const todoList = this.todoList.merge(todos);
+    console.log(todoList);
     return this.set('todoList', todoList);
   }
 }

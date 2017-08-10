@@ -21,7 +21,7 @@ const todos = (state = new Todos(), action) => {
       return state.deleteTodo(action)
 
     case 'FETCH_TODOS_SUCCESS':
-      return action.todos
+      return state.fetchTodos(action)
 
     default:
       return state

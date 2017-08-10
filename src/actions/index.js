@@ -1,5 +1,3 @@
-let nextTodoId = 0;
-
 export const fetchError = status => {
   return {
     type: 'FETCH_ERROR',
@@ -17,17 +15,13 @@ export const loadTodos = status => {
 export const fetchTodosSuccess = todos => {
   return {
     type: 'FETCH_TODOS_SUCCESS',
-    todos: todos.map(todo => {
-      const todo2 = Object.assign({}, todo, { id: nextTodoId++, completed: false, date: new Date() });
-      return todo2;
-    })
+    todos
   }
 }
 
 export const addTodo = text => {
   return {
     type: 'ADD_TODO',
-    id: nextTodoId++,
     text
   }
 }
