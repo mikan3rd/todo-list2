@@ -16,7 +16,6 @@ export default class Todos extends TodoListRecord {
   }
 
   addTodo(action) {
-    console.log(this.newNumber);
     return this.set('todoList', this.todoList.push(new Todo({
       id: this.getNextId(),
       text: action.text,
@@ -36,7 +35,6 @@ export default class Todos extends TodoListRecord {
     let firstNumber = 0;
     const todos = action.todos.map(todo => new Todo({ id: firstNumber++, text: todo.text}));
     const todoList = this.todoList.merge(todos);
-    console.log(todoList);
     return this.set('todoList', todoList);
   }
 }
